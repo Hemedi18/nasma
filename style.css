@@ -170,6 +170,9 @@ figcaption {
   .grid-container {
     grid-template-columns: 1fr; /* Stack items in a single column */
   }
+  nav a{
+    font-size: 14px;
+  }
 
   figure img {
     height: auto; /* Allow image height to adjust naturally */
