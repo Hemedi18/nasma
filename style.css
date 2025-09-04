@@ -1,0 +1,199 @@
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #c25bbd, #e706dc);
+  background-repeat: none;
+  background-attachment: fixed;
+  color: #3a2435; 
+  line-height: 1.6;
+  margin: auto;
+  width: 90%;
+  padding: 1%;
+  box-shadow: 1px 1px 10px #000000;
+  border-radius: 10px;
+  min-height: 100vh;
+
+
+}
+header {
+  background-color: #360236; /* Rangi ya kichwa */
+  padding: 20px;
+  box-shadow: 0 4px 6px #0000001a;
+  border-radius: 10px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-bottom: 2rem;
+  z-index: 1000;
+
+}
+h1, h2{
+  font-family: "Mystery Quest", system-ui;
+  font-size: 24px;
+  color: #000000;
+  font-weight: 900;
+  letter-spacing: 4px;
+  font-style: normal;
+
+}
+header{
+  display: flex;
+  border-bottom: 4px solid #4b2c45; /* Rangi ya zambarau iliyokolea */
+  min-height: 10vh;
+  width: 96%;
+  margin: 2% auto;
+}
+header h1{
+  width: 50%;
+  flex: 1;
+  font-size: 32px;
+  align-self: center;
+  color: #2bee24;
+}
+nav{
+  margin: 2%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 5%;
+  font-size: 18px;
+  font-weight: 600;
+  flex-wrap: wrap;
+}
+nav a{
+  color: #22deff;
+  position: relative;
+  transition: color 0.3s ease;
+  font-size: 26px;
+}
+
+/* Underline effect */
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%) scaleX(0); /* Start small at center */
+  transform-origin: center;
+  width: 95%;
+  height: 2px;
+  background: #71ee0a;
+  transition: transform 0.3s ease;
+}
+
+nav a:hover::after,
+nav a:focus::after,
+nav a.active::after {
+  transform: translateX(-50%) scaleX(1); /* Grow outward */
+}
+
+nav a:hover,
+nav a.active {
+  color: #e91e1e;
+}
+/*main*/
+main {
+  width: 96%;
+  margin: 2rem auto;
+  gap: 20px;
+  padding: 20px;
+  background-color: #841ea356;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px #20fd031a;
+
+}
+main p{
+  font-size: 24px;
+  max-width: 800px;
+}
+span{
+  color: rgb(0, 17, 255);
+}
+footer{
+  margin: 2% auto;
+  width: 96%;
+  background-color: #0c000c7a; 
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+main li{
+  margin-top: 2%;
+  font-size: 24px;
+}
+
+/* picture grid style */
+figure img {
+  height: 10rem;
+  width: 10rem;
+  border-radius: 5px;
+}
+
+figcaption {
+  display: flex;
+  gap: 2%;
+}
+
+.btn {
+  padding: 4%;
+  width: 59%;
+  background-color: #c707ee93;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px #3f0744;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  justify-items: center; 
+}
+
+.grid-container header {
+  grid-column: 1 / -1; /* Make the header span the entire width */
+}
+
+/* Media query for small screens */
+@media (max-width: 600px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* Stack items in a single column */
+  }
+
+  figure img {
+    height: auto; /* Allow image height to adjust naturally */
+    width: 100%; /* Make images take up the full width of their container */
+  }
+  .btn {
+    padding: 4%;
+    width: 59%;
+    background-color: #c707ee93;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px #3f0744;
+  }
+}
+
+/* Media query for medium screens (e.g., tablets) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for tablets */
+  }
+  .btn {
+  padding: 4%;
+  width: 59%;
+  background-color: #c707ee93;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px #3f0744;
+}
+}
